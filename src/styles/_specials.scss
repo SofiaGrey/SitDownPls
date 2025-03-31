@@ -1,0 +1,93 @@
+@use "./_var.scss" as *;
+@use './mixins' as *;
+
+.special {
+	padding: 70px 0 35px;
+
+	&__title {
+		margin-bottom: 26px;
+		font: 400 32px /32px Open Sans;
+		color: $darkGrey;
+	}
+	&__list {
+		display: grid;
+		gap: 32px;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-areas: "chair chair chair couch couch couch couch couch couch clock clock clock";
+	}
+	&__details {
+		align-self: start;
+	}
+	&__item {
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: end;
+		padding: 30px 30px 30px 30px;
+		border-radius: 10px;
+		background-color: $grey;
+		&-img {
+			margin-bottom: 16px;
+		}
+		&-title {
+			margin-bottom: 23px;
+			font: 400 24px/31.2px Open Sans;
+			color: $darkGrey;
+		}
+		&-btn {
+			
+			@include makeStateTrsBtn();
+		}
+	}
+}
+
+.item-price {
+	margin-bottom: 23px;
+	&-current {
+		margin-right: 30px;
+		font: 400 18px/23.4px Open Sans;
+		color: $orange;
+	}
+	&-old {
+		font: 400 16px/20.8px Open Sans;
+		color: #999;
+		text-decoration: line-through;
+	}
+}
+
+.discount {
+	position: absolute;
+	inset: 30px 0;
+	padding: 7px 0 7px 19px;
+	width: 82px;
+	height: 34px;
+	font: 700 14px/19.7px Open Sans;
+	color: #fff;
+	background-color: $orange;
+
+}
+.arrow {
+	position: absolute;
+	right: -10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0;
+	height: 0;
+	border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 10px solid $orange;
+}
+
+.item1 {
+	grid-area: chair;
+}
+.item2 {
+	grid-area: couch;
+	background: no-repeat url("../images/specials-couch-sheme.png");
+	background-position: calc(100% - 30px) calc(100% - 30px);
+	background-color: $grey;
+}
+.item3 {
+	grid-area: clock;
+}

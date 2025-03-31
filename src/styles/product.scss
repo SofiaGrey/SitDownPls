@@ -1,0 +1,117 @@
+@use "./_var.scss" as *;
+@use "./mixins" as *;
+
+.header {
+	&__container {
+		grid-template-areas:
+			"phone phone . . . add add add add add add add"
+			"logo logo . nav nav nav nav nav nav nav nav nav"
+			"search search search search search search search search search search . icons"
+			"path path path path . . . . . . . .";
+	}
+}
+
+.product {
+	padding-bottom: 82px;
+	&__top {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 32px;
+		margin-bottom: 113px;
+	}
+	&__img {
+		width: 100%;
+	}
+	&__wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+	}
+	&__title {
+		margin-bottom: 5px;
+		padding-top: 25px;
+		font: 400 24px/21.2px Open Sans;
+		color: $darkGrey;
+	}
+	&__info {
+		margin-bottom: 21px;
+		font: 400 14px/14px Open Sans;
+		color: #999;
+	}
+	&__price {
+		margin-bottom: 21px;
+		font: 400 36px/46.8px Open Sans;
+		color: $darkGrey;
+	}
+	&__btn-buy {
+		margin-bottom: 12px;
+		padding: 19px 35px;
+		font: 600 16px/16px Open Sans;
+		color: #fff;
+		border: 2px solid $primary;
+		background-color: $primary;
+		@include makeStateBtn();
+	}
+	&__btn-add {
+		font: 400 16px/20.8px Open Sans;
+		color: $primary;
+	}
+	&__rating {
+		position: absolute;
+		inset: 0 auto auto 0;
+		font: 400 16px/20.8px Open Sans;
+		color: $orange;
+	}
+
+	&__bottom {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 32px;
+	}
+	&__about {
+		&::after {
+			content: "";
+			display: block;
+			min-height: 113px;
+			background: no-repeat center / contain url("..//images/specials-couch-sheme2.png");
+		}
+	}
+	&__subtitle {
+		margin-bottom: 8px;
+		font: 600 16px/16px Open Sans;
+		color: $darkGrey;
+	}
+	&__descr {
+		font: 400 14px/25.2px Open Sans;
+		color: $darkGrey;
+	}
+	&__descr-last {
+		padding-bottom: 105px;
+	}
+	&__item-row {
+		display: flex;
+		align-items: center;
+	}
+	&__item-label {
+		font: 400 14px/25.2px Open Sans;
+		color: #999;
+	}
+	&__item-line {
+		flex-grow: 1;
+		background: repeat-x url('../images/dot.png');
+		background-position: 0 14px;
+		height: 20px;
+	}
+	&__item-value {
+		font: 400 14px/25.2px Open Sans;
+		color: $darkGrey;
+	}
+}
+
+.similar {
+	padding-bottom: 70px;
+	&__title {
+		font: 400 24px/31.2px Open Sans;
+	}
+}

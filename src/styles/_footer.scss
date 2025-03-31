@@ -1,0 +1,67 @@
+@use "./_var.scss" as *;
+@use "./mixins" as *;
+
+.footer {
+	background-color: #eaeaea;
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		padding: 24px 0;
+	}
+	&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	&__list {
+		display: flex;
+		gap: 20px;
+	}
+	&__social-item {
+		&-link {
+			position: relative;
+			z-index: 2000;
+		@include makeIconState($primary);
+		}
+		&-icon {
+			position: relative;
+			width: 30px;
+			height: 30px;
+			fill: #999;
+			transition:
+				fill 0.3s ease-in-out,
+				background-color 0.3s ease-in-out;
+				z-index: 200;
+		}
+	}
+
+	&__right {
+		display: flex;
+		gap: 112px;
+	}
+	&__bottom {
+		padding: 5px 0 6px;
+		font: 400 14px/19.07px Open Sans;
+		color: #999;
+		background-color: $grey;
+		text-align: center;
+	}
+}
+
+.menu {
+	&__title {
+		margin-bottom: 10px;
+		font: 400 16px/16px Open Sans;
+		color: $darkGrey;
+	}
+	&__submenu {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	&__link {
+		cursor: pointer;
+		font: 400 14px/14px Open Sans;
+		color: #999;
+	}
+}

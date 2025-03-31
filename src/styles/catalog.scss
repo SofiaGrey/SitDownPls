@@ -1,0 +1,236 @@
+@use "./_var.scss" as *;
+@use "./mixins" as *;
+
+.header {
+	&__container--with-breadcrumbs {
+		grid-template-areas:
+			"phone phone . . . add add add add add add add"
+			"logo logo . nav nav nav nav nav nav nav nav nav"
+			"search search search search search search search search search search . icons"
+			"path path path path . . . . . . . .";
+	}
+}
+
+.main {
+	&__container {
+		display: flex;
+		// gap: 32px;
+	}
+	&__hidden-title {
+		visibility: hidden;
+	}
+}
+
+.filter {
+	width: 296px;
+	&__title {
+		margin-bottom: 20px;
+		font: 400 18px/23.4px Open Sans;
+		color: $darkGrey;
+	}
+	&__second-title {
+		display: none;
+	}
+	&__subtitle {
+		margin-bottom: 9px;
+		font: 600 16px/20.8px Open Sans;
+		color: #666;
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 26px;
+		gap: 10px;
+	}
+	&__text-field {
+		display: flex;
+		align-items: center;
+		gap: 9px;
+		font: 400 16px/20.8px Open Sans;
+		color: #666;
+	}
+	&__input {
+		padding: 4px 13px;
+		width: 86px;
+		height: 30px;
+		border: 1px solid #999;
+		border-radius: 2px;
+		outline: none;
+		transition:
+			border 0.3s ease-in-out,
+			background-color 0.3s ease-in-out;
+		&:focus-visible {
+			border: 1px solid $primary;
+			background-color: #ebd1ff;
+		}
+		&:hover {
+			border: 1px solid $primary;
+		}
+		&:not(:placeholder-shown) {
+			border: 1px solid $accent;
+		}
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+		}
+	}
+}
+
+.custom-checkbox {
+	color: #666;
+}
+
+.catalog {
+	padding-bottom: 32px;
+	&__title {
+		margin-bottom: 24px;
+		font: 400 24px/31.2px Open Sans;
+		color: $darkGrey;
+	}
+	&__list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-bottom: 32px;
+	margin-right: 32px;
+}
+
+.collection {
+	border-radius: 10px;
+	overflow: hidden;
+	&::before {
+		content: "";
+		display: block;
+		min-height: 190px;
+		background: no-repeat center / cover url("../images/banner.png");
+	}
+	&__content {
+		padding: 30px;
+		background-color: $darkGrey;
+	}
+	&__title {
+		margin-bottom: 5px;
+		font: 900 24px/32px Playfair Display;
+		color: #d5b986;
+	}
+	&__descr {
+		margin-bottom: 12px;
+		font: 400 16px/21.17px Open Sans;
+		color: #666;
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		font: 700 16px/19.2px Open Sans;
+		color: $primary;
+		text-decoration-color: transparent;
+		transition:
+			color 0.3s ease-in-out,
+			text-decoration-color 0.3s ease-in-out;
+
+		&:focus-visible {
+			text-decoration: underline;
+			text-decoration-color: $primary;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 4px;
+			svg {
+				fill: $highlight;
+				path {
+					stroke: #fff;
+				}
+				circle {
+					stroke: $primary;
+				}
+			}
+		}
+		&:hover {
+			text-decoration: underline;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 4px;
+			svg {
+				fill: $primary;
+				path {
+					stroke: #fff;
+				}
+				circle {
+					stroke: $primary;
+				}
+			}
+		}
+		&:active {
+			color: $accent;
+			text-decoration: underline;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 4px;
+			svg {
+				fill: $accent;
+				path {
+					stroke: #fff;
+				}
+				circle {
+					stroke: $accent;
+				}
+			}
+		}
+	}
+	&__arrow-icon {
+		width: 22px;
+		height: 22px;
+		fill: transparent;
+		stroke: $primary;
+		transition:
+			stroke 0.3s ease-in-out,
+			fill 0.3s ease-in-out;
+	}
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+	padding-bottom: 70px;
+	&__num {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		font: 600 16px/16px Open Sans;
+		color: $primary;
+		border: 2px solid $primary;
+		border-radius: 10px;
+		transition:
+			background-color 0.3s ease-in-out,
+			color 0.3s ease-in-out,
+			border 0.3s ease-in-out;
+		&:focus-visible {
+			color: #fff;
+			background-color: $highlight;
+			border: 2px solid $primary;
+		}
+		&:hover {
+			color: #fff;
+			background-color: $primary;
+			border: 2px solid $primary;
+		}
+		&:active {
+			color: #fff;
+			background-color: $accent;
+			border: 2px solid $accent;
+		}
+	}
+	.current-page {
+		color: #fff;
+		background-color: $accent;
+		border: 2px solid $accent;
+	}
+	.hidden-page {
+		display: none;
+	}
+}

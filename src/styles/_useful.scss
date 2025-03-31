@@ -1,0 +1,63 @@
+@use "./_var.scss" as *;
+@use "./mixins" as *;
+
+.useful {
+	padding: 35px 0 35px;
+	&__title {
+		margin-bottom: 26px;
+		font: 400 32px/32px Open Sans;
+		color: $darkGrey;
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 32px;
+	}
+	&__item {
+		display: grid;
+		overflow: hidden;
+		border-radius: 10px;
+		&-content {
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			justify-content: space-between;
+			min-height: 250px;
+			padding: 30px 27px 30px 30px;
+			background-color: $grey;
+		}
+		&-descr {
+			margin-bottom: 38px;
+			font: 400 24px/22.68px Open Sans;
+			color: $darkGrey;
+		}
+		&-btn {
+			@include makeStateTrsBtn();
+		}
+	}
+}
+
+.useful1 {
+	&::before {
+		content: "";
+		min-height: 426px;
+		background: no-repeat top / cover url("../images/useful1.jpg");
+	}
+}
+.useful2 {
+	&::before {
+		content: "";
+		min-height: 426px;
+		background: no-repeat top / cover url("../images/useful2.jpg");
+	}
+}
+.useful3 {
+	display: none;
+	&::before {
+		content: "";
+		min-height: 426px;
+		background: no-repeat top / cover url("../images/useful3.jpg");
+	}
+}
+
+

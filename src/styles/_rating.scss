@@ -1,0 +1,59 @@
+@use "./_var.scss" as *;
+@use './mixins' as *;
+
+.rating {
+	padding: 35px 0 70px;
+}
+
+.goods {
+	&__title {
+		margin-bottom: 26px;
+		font: 400 32px/32px Open Sans;
+		color: $darkGrey;
+	}
+	&__list {
+		display: grid;
+		gap: 32px;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	&__item {
+		position: relative;
+		display: grid;
+		justify-items: flex-start;
+		align-items: end;
+		padding: 109px 15px 30px;
+		min-height: 420px;
+		border-radius: 10px;
+		background-color: $grey;
+		&-rating {
+			position: absolute;
+			inset: 30px auto auto 30px;
+			font: 400 16px/20.8px Open Sans;
+			color: $orange;
+		}
+		&-img {
+			justify-self: center;
+			align-self: flex-start;
+			margin-bottom: 16px;
+		}
+		&-title {
+			margin-bottom: 24px;
+			font: 400 24px/31.2px Open Sans;
+		}
+		&-price {
+			margin-bottom: 24px;
+			font: 400 16px/20.8px Open Sans;
+			color: #666;
+		}
+		&-btn {
+			border-radius: 10px;
+			cursor: pointer;
+			@include makeStateTrsBtn();
+		}
+	}
+}
+
+.star-icon {
+	width: 15.73px;
+	height: 15px;
+}

@@ -1,0 +1,27 @@
+@use './var' as *;
+@use './mixins' as *;
+
+.hero {
+	background: no-repeat center url('../images/hero.png');
+
+	&__content{
+		padding: 80px 0;
+		max-width: 500px;
+	}
+	&__title {
+		margin-bottom: 49px;
+		font: 700 48px/65.73px Open Sans;
+		color: #999;
+	}
+	&__btn {
+		padding: 22px 50px;
+		font: 700 16px/16px Open Sans;
+		color: #fff;
+		border: 2px solid $primary;
+		background-color: $primary;
+		@include makeStateBtn();
+	}
+	&__second-btn {
+		display: none;
+	}
+}

@@ -1,0 +1,93 @@
+@use "./_var.scss" as *;
+@use "./mixins" as *;
+
+.feedback {
+	// display: flex;
+	padding: 35px 0 70px;
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 32px;
+		&::after {
+			content: "";
+			display: flex;
+			background: no-repeat center / contain url("../images/feedback.png");
+		}
+	}
+	&__title {
+		margin-bottom: 9px;
+		font: 400 32px/32px Open Sans;
+		color: $darkGrey;
+	}
+	&__descr {
+		margin-bottom: 16px;
+		font: 400 14px/19.07px Open Sans;
+		color: #666;
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+	}
+	&__input {
+		margin-bottom: 30px;
+		padding: 7px 18px;
+		height: 54px;
+		font: 400 16px/40px Open Sans;
+		color: $darkGrey;
+		background-color: $grey;
+		border-radius: 10px;
+		border: none;
+		outline: none;
+		@include makeStateInput();
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+		}
+	}
+	&__btn {
+		align-self: start;
+		margin-bottom: 12px;
+		padding: 19px 35px;
+		border-radius: 10px;
+		border: 2px solid $primary;
+		font: 600 16px/16px Open Sans;
+		color: #fff;
+		background-color: $primary;
+		@include makeStateBtn();
+	}
+} 
+
+.custom-checkbox {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	user-select: none;
+	
+	&__input {
+		appearance: none;
+		width: 14px;
+		height: 14px;
+		border: 1px solid #999;
+		border-radius: 2px;
+		outline: none;
+		cursor: pointer;
+		transition: background-color .3s ease-in-out;
+
+		&:checked {
+			background: no-repeat center / contain url("../images/icons/cheked.svg");
+			background-color: $primary;
+			border: 1px solid $primary;
+		}
+	}
+
+	&__box {
+		position: relative;
+		display: inline-block;
+	}
+
+	&__highlight {
+		color: $primary;
+		text-decoration: underline;
+	}
+}

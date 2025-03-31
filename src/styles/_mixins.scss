@@ -1,0 +1,115 @@
+@use "./var" as *;
+
+@mixin makeStateTrsBtn {
+	padding: 19px 35px;
+	font: 600 16px/16px Open Sans;
+	border: 2px solid $primary;
+	color: $primary;
+	transition:
+		background-color 0.3s ease-in-out,
+		color 0.3s ease-in-out,
+		border 0.3s ease-in-out;
+	&:focus-visible {
+		color: #fff;
+		background-color: $highlight;
+	}
+	&:hover {
+		color: #fff;
+		background-color: $primary;
+	}
+	&:active {
+		color: #fff;
+		background-color: $accent;
+		border: 2px solid $accent;
+	}
+}
+
+@mixin makeStateBtn {
+	transition:
+		background-color 0.3s ease-in-out,
+		border 0.3s ease-in-out;
+	&:focus-visible {
+		border: 2px solid $accent;
+		background-color: $highlight;
+	}
+	&:hover {
+		border: 2px solid $highlight;
+		background-color: $highlight;
+	}
+	&:active {
+		border: 2px solid $accent;
+		background-color: $accent;
+	}
+}
+
+@mixin makeStateLink($prop) {
+	transition:
+		color 0.3s ease-in-out,
+		background-color 0.3s ease-in-out;
+	&:focus-visible {
+		color: $prop;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0 -8px 0 -8px;
+		background-color: $focusLinkBg;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+		z-index: -1;
+	}
+	&:focus-visible::before {
+		opacity: 1;
+	}
+	&:hover {
+		color: $primary;
+	}
+	&:active {
+		color: $accent;
+	}
+}
+
+@mixin makeStateInput {
+	transition: background-color 0.3s ease-in-out, border .3s ease-in-out;
+	&:focus-visible {
+		outline: 2px solid $primary;
+		outline-offset: -2px;
+		background-color: #F8EFFF;
+	}
+	&:hover {
+		background-color: #EAEAEA;
+	}
+	&:not(:placeholder-shown) + .search-icon .search-use {
+		color: $primary;
+	}
+}
+
+@mixin makeIconState($prop) {
+	&:focus-visible {
+		&::before {
+			opacity: 1;
+		}
+		svg {
+			fill: #fff;
+		}
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		inset: -15px -2px 2px -3px;
+		background-color: $highlight;
+		opacity: 0;
+		z-index: 100;
+		transition:
+			fill 0.3s ease-in-out,
+			background-color 0.3s ease-in-out,
+			opacity 0.3s ease-in-out;
+	}
+	&:hover svg {
+		fill: $prop;
+	}
+	&:active svg {
+		outline: none;
+		fill: $accent;
+	}
+}

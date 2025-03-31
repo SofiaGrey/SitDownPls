@@ -1,0 +1,144 @@
+@use "./_var.scss" as *;
+@use "./mixins" as *;
+
+.categories {
+	padding: 70px 0 35px;
+	&__title {
+		margin-bottom: 26px;
+		font: 400 32px/32px Open Sans;
+		color: $darkGrey;
+	}
+
+	&__list {
+		display: grid;
+		gap: 32px;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: auto auto;
+		grid-template-areas:
+			"categ-couch categ-couch categ-couch categ-couch categ-couch categ-couch armchair armchair armchair armchair armchair armchair"
+			"bed bed bed bed dresser dresser dresser dresser categ-chair categ-chair categ-chair categ-chair";
+	}
+	&__item {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		padding: 30px 30px 30px 0;
+		border-radius: 10px;
+		background-color: $grey;
+		&-title {
+			margin-bottom: 30px;
+			padding-left: 30px;
+			font: 400 24px/62.58px Open Sans;
+			color: $darkGrey;
+		}
+		&-arrow-title-icon {
+			display: none;
+			width: 22px;
+			height: 22px;
+			fill: transparent;
+			stroke: $primary;
+			transition:
+				stroke 0.3s ease-in-out,
+				fill 0.3s ease-in-out;
+		}
+		&-img {
+			margin-bottom: 30px;
+		}
+		&-link {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			padding-left: 30px;
+			font: 700 16px/19.2px Open Sans;
+			color: $primary;
+			text-decoration-color: transparent;
+			transition:
+				color 0.3s ease-in-out,
+				text-decoration-color 0.3s ease-in-out;
+
+			&:focus-visible {
+				text-decoration: underline;
+				text-decoration-color: $primary;
+				text-decoration-thickness: 2px;
+				text-underline-offset: 4px;
+				svg {
+					fill: $highlight;
+					path {
+						stroke: #fff;
+					}
+					circle {
+						stroke: $primary;
+					}
+				}
+			}
+			&:hover {
+				text-decoration: underline;
+				text-decoration-thickness: 2px;
+				text-underline-offset: 4px;
+				svg {
+					fill: $primary;
+					path {
+						stroke: #fff;
+					}
+					circle {
+						stroke: $primary;
+					}
+				}
+			}
+			&:active {
+				color: $accent;
+				text-decoration: underline;
+				text-decoration-thickness: 2px;
+				text-underline-offset: 4px;
+				svg {
+					fill: $accent;
+					path {
+						stroke: #fff;
+					}
+					circle {
+						stroke: $accent;
+					}
+				}
+			}
+		}
+	}
+	&__subcategories {
+		display: flex;
+		gap: 30px;
+		margin-bottom: 14px;
+		padding-left: 30px;
+	}
+	&__subcategory {
+		font: 400 14px/14px Open Sans;
+		color: #999;
+	}
+
+	&__item-arrow-icon {
+		width: 22px;
+		height: 22px;
+		fill: transparent;
+		stroke: $primary;
+		transition:
+			stroke 0.3s ease-in-out,
+			fill 0.3s ease-in-out;
+	}
+}
+
+.categories-couch {
+	grid-area: categ-couch;
+}
+.categories-bed {
+	grid-area: bed;
+}
+.categories-dresser {
+	grid-area: dresser;
+}
+.categories-chair {
+	grid-area: categ-chair;
+}
+.categories-armchair {
+	grid-area: armchair;
+}
+
+

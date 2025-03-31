@@ -1,0 +1,30 @@
+@use './mixins' as *;
+@use './var' as *;
+.banner {
+	background: no-repeat center / cover url("../images/banner.png");
+	&__content{
+		padding: 150px 0;
+		max-width: 508px;
+	}
+	&__title {
+		margin-bottom: 10px;
+		font: 900 60px/72px Playfair Display;
+		color: #D5B986;
+	}
+	&__descr {
+		margin-bottom: 49px;
+		font: 700 48px/57.6px Open Sans;
+		color: #fff;
+	}
+	&__btn {
+		padding: 22px 31.5px;
+		font: 700 16px/16px Open Sans;
+		color: #fff;
+		border: 2px solid $primary;
+		background-color: $primary;
+		@include makeStateBtn();
+	}
+	&__second-btn {
+		display: none;
+	}
+}

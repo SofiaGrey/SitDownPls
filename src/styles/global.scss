@@ -1,0 +1,52 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	outline: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3 {
+	margin: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+button {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+body {
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 10px;
+	max-width: 1280px;
+	width: 100%;
+}
